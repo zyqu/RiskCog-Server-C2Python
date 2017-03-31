@@ -1,4 +1,5 @@
 from math import *
+from check_sit_or_walk import get_median
 
 def sqr(data):
     return pow(data,2)
@@ -6,7 +7,10 @@ def sqr(data):
 def get_mean(data):
     result = sum(data) * 1.0 / len(data)
     return result
-    
+
+def xtract_mean(data):
+    return get_median(data)
+
 def get_variance(data):
     mean = xtract_mean(data)
     offset = [sqr(x - mean) for x in data]
