@@ -13,7 +13,7 @@ def getFloat(str):
 	try:
 		return float(str)
 	except:
-		return None
+		return 0.0
 
 def output(argv, X, Y, Z, wX, wY, wZ, gX, gY, gZ):
 	print_XYZ(get_mean,X,Y,Z)
@@ -60,8 +60,6 @@ if __name__=="__main__":
 		count = 0
 		for l in fobj.readlines():
 			val = getFloat(l.strip())
-			if val == None:
-				continue
 			if count == 0:
 				vX.append(val)
 			elif count == 1:

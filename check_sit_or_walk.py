@@ -16,7 +16,7 @@ def s2Float(s):
 	try:
 		return float(s)
 	except:
-		return None
+		return 0.0
 
 if __name__=="__main__":
 	if len(sys.argv) != 2:
@@ -32,10 +32,9 @@ if __name__=="__main__":
 	with open(filePath, 'r') as fobj:
 		lines = fobj.readlines()
 		count = 0
-		for index in range(len(lines)):
-			fVal = s2Float(lines[index].strip())
-			if fVal == None:
-				continue
+		for l in lines:
+			l = l.strip()
+			fVal = s2Float(l)
 
 			if count == 0:
 				Ax.append(fVal)
@@ -60,7 +59,7 @@ if __name__=="__main__":
 			if count == 9:
 				count = 0
 	
-
+	
 	for index in range(len(Ax)):
 		Ax[index] = Ax[index] - Gx[index]
 		Ay[index] = Ay[index] - Gy[index]
