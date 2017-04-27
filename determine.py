@@ -21,7 +21,7 @@ if __name__=="__main__":
 				l = l.strip()
 				tokens = l.split("\t")
 				fpath = tokens[0]
-				val = float(tokens[1])
+				val = float(tokens[1].split(" ")[0])
 				if val > thres:
 					fout.write("%s %s\n"%(fpath, "walk"))
 				else:
